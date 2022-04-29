@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xs-9">
+    <h3 style="font:bold">APP PROVA DECKBUILD</h3>
+  </div>
+  <div class="col-xs-3">
+    <button class="btn btn-success" (click)="onNewDeck()">Create New Deck</button>
+  </div>
+</div>
+
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-deck-item
+      *ngFor="let deckEl of decks; let i = index"
+      [deck]="deckEl"
+      [index]="i"></app-deck-item>
+  </div>
+</div>
+
+<hr>
+

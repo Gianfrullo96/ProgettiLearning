@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-xs-6">
+      <h1>List of Cards</h1>
+    </div>
+</div>
+<div class="col-xs-12">
+    <app-card-viewer *ngFor="let cardEl of cardList; let i = index"
+        [card]="cardEl"
+        [index]="i">
+    </app-card-viewer>
+</div>
