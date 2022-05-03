@@ -19,6 +19,7 @@ import { CardViewerComponent } from './decks/deck-viewer/card-viewer/card-viewer
 import { Scryfall } from './shared/scryfall.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { HomeMenuComponent } from './shared/home-menu/home-menu.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
     DeckStartComponent,
     DeckViewerComponent,
     DropdownDirective,
-    CardViewerComponent
+    CardViewerComponent,
+    HomeMenuComponent
   
   ],
   imports: [

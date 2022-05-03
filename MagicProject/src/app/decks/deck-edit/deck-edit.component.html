@@ -3,298 +3,218 @@
     <form [formGroup]="deckForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="col-xs-12">
-          <button
-            type="submit"
-            class="btn btn-success"
-            [disabled]="!deckForm.valid">Save</button>
+          <button type="submit" class="btn btn-success" [disabled]="!deckForm.valid">Save</button>
           <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
         </div>
       </div>
+      <!--Nome Deck-->
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
             <label for="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              formControlName="name"
-              class="form-control">
+            <input type="text" id="name" formControlName="name" class="form-control">
           </div>
         </div>
       </div>
+      <!--Colore mana-->
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
             <label for="manaColor">Mana Color</label>
-            <input
-              type="text"
-              id="manaColor"
-              formControlName="manaColor"
-              class="form-control"
-              #imagePath>
+            <input type="text" id="manaColor" formControlName="manaColor" class="form-control" #imagePath>
           </div>
         </div>
       </div>
-      <!--<div class="row">
-        <div class="col-xs-12">
-          <img [src]="imagePath.value" class="img-responsive">
-        </div>
-      </div>-->
+      <!--Power level -->
       <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
             <label for="powerLevel">Power Level</label>
-            <textarea
-              type="number"
-              id="powerLevel"
-              class="form-control"
-              formControlName="powerLevel"
-              rows="6"></textarea>
+            <textarea type="number" id="powerLevel" class="form-control" formControlName="powerLevel"
+              rows="1"></textarea>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-xs-12" formArrayName="commander">
-          <div
-            class="row"
-            *ngFor="let commanderCtrl of commanderControls; let j = index"
-            [formGroupName]="j"
-            style="margin-top: 10px;">
-            <div class="col-xs-6">
-              <label for="commanderName">Nome Commander</label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="commanderName"
-                >
-            </div>
-            <div class="col-xs-4">
-              <label for="commanderImg">Image URL</label>
-              <input
-                type="text"
-                class="form-control"
-                id="commanderImg"
-                formControlName="commanderImg"
-               >
-            </div>
-            <div class="col-xs-2">
-            
-              <button
-                type="button"
-                class="btn btn-danger"
-                style="margin-top:25px"
-                (click)="onDeleteCommander(j)">X</button>
-            </div>
-          </div>
-         <!-- <div class="row">
-            <div class="col-xs-12">
-              <img [src]="imgCommander.value" class="img-responsive">
-            </div>
-          </div> -->
-          <div class="row">
-            <div class="col-xs-12">
-              <button
-                type="button"
-                class="btn btn-success"
-                style="margin-top:10px"
-                (click)="onAddCommander()">Add Commander</button>
+        <!--Commander & Partner-->
+        <div class="col-xs-12">
+          <!--Commander-->
+          <div class="col-xs-6">
+            <div class="row" style="margin-top: 10px;">
+              <div class="col-xs-12">
+                <label for="commanderName" style="color:white">Nome Commander</label>
+                <input type="text" class="form-control" id="commanderImg" value=" {{commanderCard.name}}">
+              </div>
+              <div class="col-xs-12 ">
+                <label for="commanderImg" style="color:white">Image URL</label>
+                <div *ngIf="commanderCard.name !== ''; else elseImg ">
+                  <img class="img img-responsive provaResize centerImg" src="{{commanderCard.img}}">
+                </div>
+                <ng-template #elseImg>
+                  <p>No commander image found</p>
+                </ng-template>
+              </div>
+              <div class="col-xs-12">
+                <button type="button" class=" btn btn-danger btn-lg btn-block" style="margin-top:25px"
+                  (click)="onDeleteCommander()">Delete Commander</button>
+                <button type="button" class="btn btn-success btn-lg btn-block" style="margin-top:10px"
+                  (click)="onAddCommander()">
+                  Add Commander
+                </button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top:10px"
+                  (click)="onSeeDetailsCommander(commanderCard.name)">
+                  See details
+                </button>
+              </div>
             </div>
           </div>
-          <hr>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12" formArrayName="partner">
-          <div
-            class="row"
-            *ngFor="let partnerCtrl of partnerControls; let z = index"
-            [formGroupName]="z"
-            style="margin-top: 10px;">
-            <div class="col-xs-6">
-              <label for="partnerName">Nome Partner</label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="partnerName">
-            </div>
-            <div class="col-xs-4">
-              <label for="partnerName">Img Partner</label>
-              <input
-                type="text"
-                class="form-control"
-                formControlName="partnerImg">
-            </div>
-            <div class="col-xs-2">
-              <button
-                type="button"
-                class="btn btn-danger"
-                (click)="onDeletePartner(z)"
-                style="margin-top: 25px;">X</button>
-            </div>
-          </div>
-          
-          <div class="row">
-            <div class="col-xs-12">
-              <button
-                type="button"
-                class="btn btn-success"
-                style="margin-top:10px"
-                (click)="onAddPartner()">Add partner</button>
+          <!--Partner-->
+          <div class="col-xs-6">
+            <div class="row" style="margin-top: 10px;">
+              <div class="col-xs-12">
+                <label for="partnerName" style="color:white">Nome Partner</label>
+                <input type="text" class="form-control" id="partnerImg" value=" {{partnerCard.name}}">
+              </div>
+              <div class="col-xs-12 ">
+                <label for="partnerImg" style="color:white">Image URL</label>
+                <div *ngIf="partnerCard.name !== ''; else elseImg ">
+                  <img class="img img-responsive provaResize centerImg" src="{{partnerCard.img}}">
+                </div>
+                <ng-template #elseImg>
+                  <p>No partner image found</p>
+                </ng-template>
+              </div>
+              <div class="col-xs-12">
+                <button type="button" class=" btn btn-danger btn-lg btn-block" style="margin-top:25px"
+                  (click)="onDeletePartner()">Delete partner</button>
+                <button type="button" class="btn btn-success btn-lg btn-block" style="margin-top:10px"
+                  (click)="onAddPartner()">
+                  Add partner
+                </button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top:10px"
+                  (click)="onSeeDetailsPartner(partnerCard.name)">
+                  See details
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <hr>
-
-      <div class="row">
-        <div class="col-xs-12" formArrayName="cards">
-          <label for="cards">Lista Carte</label>
-          <div
-            class="row"
-            *ngFor="let cardsCtrl of cardsControls; let i = index"
-            [formGroupName]="i"
-            style="margin-top: 10px;">
-            <div class="col-xs-6">
-              <input
-                type="text"
-                class="form-control"
-                formControlName="cardName">
-            </div>
-            <div class="col-xs-4">
-              <input
-                type="text"
-                class="form-control"
-                formControlName="cardImg"
-                #cardImg>
-            </div>
-            <div class="col-xs-2">
-              <button
-                type="button"
-                class="btn btn-danger"
-                (click)="onDeleteCard(i)">X</button>
-            </div>
-          </div>
-  
-          <div class="row">
-            <div class="col-xs-12">
-              <button
-                type="button"
-                class="btn btn-success"
-                style="margin-top: 10px"
-                (click)="onAddCard()">Add Card</button>
-            </div>
-          </div>
-        </div>
-        <hr>
-      </div>
+      
+      
     </form>
-
-<!--Prova Tasto ricerca Scryfall-->
+    <hr>
+    <div class="row">
+      <div class="col-xs-12">
+        <label for="cards">Scorrimento Carte</label>
+      </div>
+      <!--Scorrimento Carte-->
+      <div class="col-xs-12">
+        <div class="container" style="margin-top: 15px">
+          <div class="col-xs-3">
+            <button class="btn btn-primary" (click)="scroll('left')">S</button>
+          </div>
+          <div class="col-xs-6">
+            <img class="provaResize2" src="{{cardListImage}}">
+          </div>
+          <div class="col-xs-3">
+            <button class="btn btn-primary" (click)="scroll('right')">D</button>
+          </div>
+        </div>
+      </div>
+      <div class="class col-xs-12">
+        <button type="button" class=" btn btn-danger btn btn-block" style="margin-top:25px">Delete Card</button>
+        <button type="button" class="btn btn-success btn btn-block" style="margin-top:10px"
+          (click)="addNewCardToList()">Add New Card</button>
+        <button type="button" class="btn btn-primary btn btn-block" style="margin-top:10px">See All cards</button>
+      </div>
+      <div class="col-xs-12" *ngIf="newCardPressed">
+        <!--Autocomplete-->
+        <div class="row">
+          <div class="col-xs-12" style="color:black; margin-top:10px">
+            <div class="ng-autocomplete">
+              <ng-autocomplete [data]="autocompleteDataInline" [searchKeyword]="keyword" placeholder="Select Card"
+                (selected)='selectEvent($event)' (inputChanged)='onChangeSearch($event)'
+                (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate">
+              </ng-autocomplete>
+              <ng-template #itemTemplate let-item>
+                <a style="color:black; margin-top:10px" [innerHTML]="item"></a>
+              </ng-template>
+              <ng-template #notFoundTemplate let-notFound>
+                <div [innerHTML]="notFound"></div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+        <div style="padding-top: 25px;">
+          <div class="col-xs-12">
+            <img class="img img-responsive centerImg2" src="{{imgCardAuto}}">
+          </div>
+          <div class="col-xs-12">
+            <button class="btn btn-success"(click)="addCardToList()"
+            style="margin-top:10px; margin-left:50%">+Add this Card to deck</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Prova Tasto ricerca Scryfall-->
     <hr>
     <div>
-    <div class="row align-item-center">
-      <div class="col-xs-6">
-        <label for="scryfallName">Prova Scry</label>
-        <input  type="text"
-                class="form-control"
-                #prova>
+      <div class="row align-item-center">
+        <div class="col-xs-6">
+          <label for="scryfallName">Prova Scry</label>
+          <input type="text" class="form-control" #prova>
+        </div>
+        <div class="col-xs-2" style="padding-top: 25px;">
+          <button type="button" class="btn btn-danger" (click)="onFetchCard(prova.value)">Cerca Carta</button>
+        </div>
       </div>
-      <div class="col-xs-2"  style="padding-top: 25px;">
-              <button
-                type="button"
-                class="btn btn-danger"
-                (click)="onFetchCard(prova.value)">Cerca Carta</button>
+      <div class="row" style="padding-top: 25px;">
+        <div class="col-xs-12">
+          <img src="{{scryfallImg}}" class="img-responsive">
+        </div>
       </div>
     </div>
-    <div class="row" style="padding-top: 25px;">
-            <div class="col-xs-12" >
-              <img src="{{scryfallImg}}" class="img-responsive">
-            </div>
-    </div> 
-  </div>
-      
-   
-
-  <!--Prova Tasto Autocomplete-->
-  <hr>
-  <div>
-  <div class="row align-item-center">
-    <div class="col-xs-6">
-      <label for="scryfallName">Prova Autocomplete</label>
-      <input  type="text"
-            class="form-control"
-            #autocompleteInput>
-    </div>
-    <div class="col-xs-2"  style="padding-top: 25px;">
-          <button
-            type="button"
-            class="btn btn-primary"
-            (click)="onFetchAutocomplete(autocompleteInput.value)">Cerca Autocomplete</button>
-    </div>
-  </div>
-  <div class="row">
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Vedi Dettaglio</th>
-          <th scope="col">Aggiungi al deck</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor = "let cardName of autocompleteData; let i = index" [index]="i">
-          <th scope="row">{{i}}</th>
-          <td for="cardname">{{cardName}}</td>
-          <td>
-            <button class="class btn btn-primary" (click)="seeDetails(cardName)">See Details</button>
-          </td>
-          <td>
-            <button class="class btn btn-success" (click)="addToList(cardName)">Add to Deck</button>
-          </td>
-        </tr>
-       
-      </tbody>
-    </table>
-
-    </div>
-    
-  </div>
-
-
-  </div>
-  <hr>
-
-<div class="row">
-  <div class="col-xs-12">
-    
-  <div class="ng-autocomplete">
-    <ng-autocomplete 
-      [data]="autocompleteDataInline"
-      [searchKeyword]="keyword"
-      placeholder="Select Card"
-      (selected)='selectEvent($event)'
-      (inputChanged)='onChangeSearch($event)'
-      (inputFocused)='onFocused($event)'
-      [itemTemplate]="itemTemplate"
-      [notFoundTemplate]="notFoundTemplate">                                 
-    </ng-autocomplete>
-    <ng-template #itemTemplate let-item>
-      <a style="color:black" [innerHTML]="item"></a>
-    </ng-template>
-      <ng-template #notFoundTemplate let-notFound>
-      <div [innerHTML]="notFound"></div>
-      </ng-template>
+    <!--Prova Tasto Autocomplete-->
+    <hr>
+    <div>
+      <div class="row align-item-center">
+        <div class="col-xs-6">
+          <label for="scryfallName">Prova Autocomplete</label>
+          <input type="text" class="form-control" #autocompleteInput>
+        </div>
+        <div class="col-xs-2" style="padding-top: 25px;">
+          <button type="button" class="btn btn-primary" (click)="onFetchAutocomplete(autocompleteInput.value)">Cerca
+            Autocomplete</button>
+        </div>
       </div>
-      
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Vedi Dettaglio</th>
+              <th scope="col">Aggiungi al deck</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cardName of autocompleteData; let i = index" [index]="i">
+              <th scope="row">{{i}}</th>
+              <td for="cardname">{{cardName}}</td>
+              <td>
+                <button class="class btn btn-primary" (click)="seeDetails(cardName)">See Details</button>
+              </td>
+              <td>
+                <button class="class btn btn-success" (click)="addToList(cardName)">Add to Deck</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+
+
   </div>
   <hr>
-
-  <hr>
-  <hr>
-  <hr>
-

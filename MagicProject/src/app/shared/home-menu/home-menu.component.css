@@ -1,0 +1,26 @@
+
+/*height dovrebbe scalare con il resto del contenuto ora è fissa a due volte l' immagine*/
+
+.resizingImg{
+    min-height: 700px;
+    min-width: 150px;
+    max-width: 247px;
+    height: 2000px;
+}
+
+   body {
+    background-image: url('src\assets\img\home_menu2.png');
+    background-color: #cccccc;
+   }
+   .group-item{
+   position: relative;
+   display: block;
+   padding: 10px 15px;
+   margin-bottom: -1px;
+  
+   border: 1px solid #ddd;
+   }
+body > ul > li {
+    color: white;
+}
+ 

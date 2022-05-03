@@ -2,3 +2,14 @@
     max-width: 400 px;
     max-height: 600 px;
 }
+.highlight{
+    border-color: #333;
+    --bs-primary: #c999e6;
+    --bs-body-bg-rgb: 34, 34, 34;
+    --bs-info-rgb: 112, 168, 255;
+    --bg-color: #222;
+    --bs-light: #111;
+    --default-text-color: #bbb;
+    background-color: #222;
+    color: #bbb;
+}

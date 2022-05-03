@@ -16,21 +16,22 @@ export class DeckService{
 
 
  deckChanged = new Subject<Deck[]>();
+ cardChanged = new Subject<Card>();
 
  private decks: Deck[] = [
      new Deck(
-         '1000 ways to die',
+         'Hundred ways to dia',
          'Rakdos',
          8,
-         new Card('Commander1',this.imgTevesh),
-        new Card('Partner', this.imgDargo),
+         new Card('PrimoCommander',this.imgTevesh),
+        new Card('PrimoPartner', this.imgDargo),
         [
          new Card('carta1', this.img1),
          new Card('carta2', this.img2)
         ]),
 
         new Deck(
-            'Pirates',
+            "Pirates 'n treasure",
             'Grixis',
             9,
             new Card('Commander2',this.imgMalcolm),
@@ -58,14 +59,28 @@ export class DeckService{
     getDeckCard(index: number){
         return this.decks[index].cards;
     }
-   
+
+
+    // Verificare, non penso sia una buona procedura sostituire con una carta vuota, ma in questa maniera non ho errore dopo cancellazione
+    deleteCommander(index: number){
+        this.decks[index].commander = new Card('','');
+        this.cardChanged.next(this.decks[index].commander);
+    }
+    deletePartner(index: number){
+        this.decks[index].partner;
+    }
+    deleteSingleCard(indexDeck: number, indexCard: number){
+        console.log(indexCard);
+        console.log(this.decks[indexDeck].cards[indexCard]);
+        this.decks[indexDeck].cards.splice(indexCard,1);
+    }
+
     //update non agisce come dovrebbe
     updateDeck(index: number , newDeck: Deck){
         console.log(newDeck);
         console.log(this.decks[1]);
         this.decks[index]= newDeck;
         this.deckChanged.next(this.decks.slice());
-      
     }
 
     deleteDeck(index: number){

@@ -35,7 +35,7 @@ input[type=submit] {
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: rgb(151, 52, 52);
   border-bottom: 1px solid #d4d4d4;
 }
 .autocomplete-items div:hover {
@@ -46,4 +46,24 @@ input[type=submit] {
   /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important;
   color: #ffffff;
+}
+
+.provaResize{
+ max-height: 500px;
+}
+.provaResize2{
+  max-height: 300px;
+ }
+
+.centerImg{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 75%;
+}
+.centerImg2{
+  display: block;
+margin-left: auto;
+margin-right: auto;
+width: 40%;
 }

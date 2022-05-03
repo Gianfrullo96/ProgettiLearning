@@ -40,7 +40,6 @@ public testDataObj = [];
 
 
  fetchCards(name: string){
-
     let url= 'https://api.scryfall.com/cards/named?fuzzy=';
     console.log('url: ' + url + name)
     return this.http.get(url + name);
@@ -55,6 +54,10 @@ fetchCardsAutoComplete(name: string){
 }
 fetchCardImg(name:string){
     let url= 'https://api.scryfall.com/cards/named?fuzzy=';
+    return this.http.get(url + name);
+}
+fetchCard(name:string){
+    let url= 'https://api.scryfall.com/cards/named?exact=';
     return this.http.get(url + name);
 }
 }
