@@ -37,7 +37,7 @@
 1x Heroic Intervention
 1x Hostage Taker
 1x Imperial Recruiter
-1x Impulsive Pilferer (God Usopp)
+1x Impulsive Pilferer
 1x It That Betrays
 1x Jeska, Thrice Reborn
 1x Jeska’s Will
@@ -47,7 +47,7 @@
 1x Kozilek, Butcher of Truth
 1x Lightning Greaves
 1x Lightning-Rig Crew
-1x Lupusregina, Dreadhorde General
+1x Liliana, Dreadhorde General
 1x Maelstrom Wanderer
 1x Malcolm, Keen-Eyed Navigator
 1x Mana Vault
