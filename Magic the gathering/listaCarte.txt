@@ -1,13 +1,19 @@
+1x Aerial Surveyor
 1x Tevesh Szat, Doom of Fools
+1x Akroma’s Will
 1x Dargo, the Shipwrecker
 1x Animate Dead
 1x Anointed Procession
 1x Apex Devastator
 1x Araumi of the Dead Tide
+1x Aurelia, the Warleader
+1x Awaken the Woods
 1x Bloodstained Mire
-1x Brago, King Eternal
+1x Brago, King Eternal 
 1x Captain Lannery Storm
+1x Cavern of Souls
 1x Changeling Outcast
+1x Chord of Calling
 1x City of Brass
 1x Coercive Recruiter
 1x Commissar Severina Raine
@@ -17,9 +23,10 @@
 1x Deadly Rollick
 1x Demonic Tutor
 1x Dire Fleet Daredevil
+1x Dispatch
+1x Dockside Extortionist 
 1x Dockside Extortionist
-1x Dockside Extortionist
-1x Drannith Magistrate
+1x Drannith Magistrate 
 1x Dualcaster Mage
 1x Elesh Norn, Grand Cenobite
 1x Entomb
@@ -30,34 +37,43 @@
 1x Fiery Emancipation
 1x Forbidden Orchard
 1x Force of Negation
-1x Forerunner of the Coalition
-1x Glint-Horn Buccaneer
+1x Forerunner of the Coalition 
+1x Glint-Horn Buccaneer 
 1x Grim Hireling
 1x Haunted Ridge
+1x Heliod, Sun-Crowned
 1x Heroic Intervention
 1x Hostage Taker
 1x Imperial Recruiter
-1x Impulsive Pilferer
+1x Impulsive Pilferer 
+1x Ironsoul Enforcer
 1x It That Betrays
 1x Jeska, Thrice Reborn
 1x Jeska’s Will
 1x Jeweled Lotus
 1x Jeweled Lotus
 1x Jeweled Lotus
+1x Kappa Cannoneer 
+1x Kotori, Pilot Prodigy
 1x Kozilek, Butcher of Truth
 1x Lightning Greaves
-1x Lightning-Rig Crew
+1x Lightning-Rig Crew 
 1x Liliana, Dreadhorde General
 1x Maelstrom Wanderer
 1x Malcolm, Keen-Eyed Navigator
 1x Mana Vault
 1x Marsh Flats
 1x Mayhem Devil
+1x Mech Hangar
+1x Mobilizer Mech
 1x Mother of Runes
 1x Niv-Mizzet, Parun
 1x Old Gnawbone
+1x Organic Extinction
 1x Otawara, Soaring City
 1x Panharmonicon
+1x Parhelion II
+1x Peacewalker Colossus
 1x Phyrexian Altar
 1x Polluted Delta
 1x Reanimate
@@ -67,21 +83,29 @@
 1x Rhystic Study
 1x Scalding Tarn
 1x Scroll Rack
+1x Seedborn Muse
 1x Selvala, Heart of the Wilds
+1x Shadowspear
 1x Sheoldred, Whispering One
+1x Shorikai, Genesis Engine
 1x Simian Spirit Guide
 1x Simian Spirit Guide
 1x Siren Stormtamer
 1x Skullclamp
+1x Skysovereign, Consul Flagship
 1x Smothering Tithe
 1x Spark Double
 1x Stoneforge Mystic
 1x Storm Fleet Sprinter
 1x Stormcarved Coast
+1x Swords to Plowshares
 1x Teferi’s Protection
+1x Tempered Steel
 1x Temple Garden
 1x Temur Sabertooth
 1x Terror of the Peaks
+1x Tezzeret the Seeker
+1x Thassa, Deep-Dwelling
 1x Thassa’s Oracle
 1x The Meathook Massacre
 1x The Ozolith
@@ -96,5 +120,8 @@
 1x Vial Smasher the Fierce
 1x Void Winnower
 1x Watery Grave
+1x Weatherlight
 1x Worldly Tutor
 1x Wurmcoil Engine
+1x Zacama, Primal Calamity
+1x Opt
